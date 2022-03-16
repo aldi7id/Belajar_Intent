@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BelajarIntent">
         <activity
-            android:name="com.ajgroup.belajarintent.intent.activitydestination.BundleActivity"
+            android:name=".intent.activitydestination.SerializableActivity"
             android:exported="false" />
         <activity
-            android:name="com.ajgroup.belajarintent.intent.activitydestination.SimplePutExtraDestinationActivity"
+            android:name=".intent.activitydestination.BundleActivity"
             android:exported="false" />
         <activity
-            android:name="com.ajgroup.belajarintent.intent.activitydestination.SecondActivity"
+            android:name=".intent.activitydestination.SimplePutExtraDestinationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intent.activitydestination.SecondActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

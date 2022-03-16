@@ -7,12 +7,14 @@ import com.ajgroup.belajarintent.intent.activitydestination.BundleActivity
 import com.ajgroup.belajarintent.intent.activitydestination.SecondActivity
 import com.ajgroup.belajarintent.intent.activitydestination.SimplePutExtraDestinationActivity
 import com.ajgroup.belajarintent.databinding.ActivityMainBinding
+import com.ajgroup.belajarintent.intent.activitydestination.SerializableActivity
 
 class MainActivity : AppCompatActivity() {
     companion object {
         const val MESSAGE = "MESSAGE"
         const val AGE = "AGE"
         const val BUNDLE = "BUNGKUSAN"
+        const val OBJECT_SERIALIZABLE = "OBJEK SERIALIZABLE"
     }
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,6 +67,19 @@ class MainActivity : AppCompatActivity() {
             }
         startActivity(intentBundle)
 
+        }
+
+        binding.btnPutExtraserializable.setOnClickListener {
+            val studentAndroid = StudentSerializable(
+                binding.etMhsName.text.toString(),
+                binding.etMhsAge.text.toString().toInt(),
+                binding.etMhsNim.text.toString()
+            )
+
+            val intentSerializable = Intent(this, SerializableActivity::class.java).apply {
+                putExtra(OBJECT_SERIALIZABLE, studentAndroid)
+            }
+        startActivity(intentSerializable)
         }
     }
 }
