@@ -52,17 +52,12 @@
         android:layout_height="wrap_content"
         android:text="PUT EXTRA BUNDLE"
         />
-    <Button
-        android:id="@+id/btn_put_extraserializable"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="PUT EXTRA SERIALIZABLE"
-        />
+
     <EditText
         android:id="@+id/et_mhs_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Masukkan pesan anda"
+        android:hint="Masukkan nama anda"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -76,8 +71,14 @@
         android:hint="Masukkan umur anda"/>
     <EditText
         android:id="@+id/et_mhs_nim"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Masukkan umur anda"/>
-
+        android:hint="Masukkan nim anda"/>
+    <Button
+        android:id="@+id/btn_put_extraserializable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PUT EXTRA SERIALIZABLE"
+        />
 </LinearLayout>
