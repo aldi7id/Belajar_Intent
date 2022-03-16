@@ -23,5 +23,9 @@ class MainActivity : AppCompatActivity() {
                 startActivity(sendIntent)
             }
         }
+        binding.btnSimpleIntent.setOnClickListener {
+            val intentToSecondActivity = Intent (this, SecondActivity::class.java)
+            startActivity(intentToSecondActivity)
+        }
     }
 }
