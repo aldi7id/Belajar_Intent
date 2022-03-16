@@ -3,6 +3,7 @@ package com.ajgroup.belajarintent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.ajgroup.belajarintent.intent.activitydestination.BundleActivity
 import com.ajgroup.belajarintent.intent.activitydestination.SecondActivity
 import com.ajgroup.belajarintent.intent.activitydestination.SimplePutExtraDestinationActivity
@@ -70,16 +71,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnPutExtraserializable.setOnClickListener {
-            val studentAndroid = StudentSerializable(
-                binding.etMhsName.text.toString(),
-                binding.etMhsAge.text.toString().toInt(),
-                binding.etMhsNim.text.toString()
-            )
+            if(binding.etMhsAge.text.isNotEmpty()){
+                val studentAndroid = StudentSerializable(
+                    binding.etMhsName.text.toString(),
+                    binding.etMhsAge.text.toString().toInt(),
+                    binding.etMhsNim.text.toString()
+                )
 
-            val intentSerializable = Intent(this, SerializableActivity::class.java).apply {
-                putExtra(OBJECT_SERIALIZABLE, studentAndroid)
+                val intentSerializable = Intent(this, SerializableActivity::class.java).apply {
+                    putExtra(OBJECT_SERIALIZABLE, studentAndroid)
+                }
+                startActivity(intentSerializable)
+            } else {
+                Toast.makeText(this, "HARAP DI ISI UMUR", Toast.LENGTH_SHORT).show()
             }
-        startActivity(intentSerializable)
+
+
         }
     }
 }
