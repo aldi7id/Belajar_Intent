@@ -12,13 +12,16 @@
         android:id="@+id/et_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Masukkan pesan anda"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
-
-    />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Masukkan umur anda"/>
 
     <Button
         android:id="@+id/btn_send"
@@ -33,7 +36,14 @@
         android:id="@+id/btn_simple_intent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="EXPLICIT INTENT"
+        android:text="EXPLICIT INTENT - SIMPLE"
         />
+    <Button
+        android:id="@+id/btn_simple_put_extra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SIMPLE PUT EXTRA"
+        />
+
 
 </LinearLayout>
