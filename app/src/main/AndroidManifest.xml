@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BelajarIntent">
         <activity
-            android:name=".activitydestination.BundleActivity"
+            android:name="com.ajgroup.belajarintent.intent.activitydestination.BundleActivity"
             android:exported="false" />
         <activity
-            android:name=".activitydestination.SimplePutExtraDestinationActivity"
+            android:name="com.ajgroup.belajarintent.intent.activitydestination.SimplePutExtraDestinationActivity"
             android:exported="false" />
         <activity
-            android:name=".activitydestination.SecondActivity"
+            android:name="com.ajgroup.belajarintent.intent.activitydestination.SecondActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

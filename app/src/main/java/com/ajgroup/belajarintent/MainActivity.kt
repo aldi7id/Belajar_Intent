@@ -3,9 +3,9 @@ package com.ajgroup.belajarintent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ajgroup.belajarintent.activitydestination.BundleActivity
-import com.ajgroup.belajarintent.activitydestination.SecondActivity
-import com.ajgroup.belajarintent.activitydestination.SimplePutExtraDestinationActivity
+import com.ajgroup.belajarintent.intent.activitydestination.BundleActivity
+import com.ajgroup.belajarintent.intent.activitydestination.SecondActivity
+import com.ajgroup.belajarintent.intent.activitydestination.SimplePutExtraDestinationActivity
 import com.ajgroup.belajarintent.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             val intentBundle = Intent(this, BundleActivity::class.java).apply {
                 putExtra(BUNDLE, bundleSaya)
             }
-
+        startActivity(intentBundle)
 
         }
     }

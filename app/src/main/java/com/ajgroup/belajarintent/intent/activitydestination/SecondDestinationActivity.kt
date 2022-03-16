@@ -1,4 +1,4 @@
-package com.ajgroup.belajarintent.activitydestination
+package com.ajgroup.belajarintent.intent.activitydestination
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
