@@ -46,6 +46,12 @@
         android:layout_height="wrap_content"
         android:text="SIMPLE PUT EXTRA"
         />
+    <Button
+        android:id="@+id/btn_put_extra_bundle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PUT EXTRA BUNDLE"
+        />
 
 
 </LinearLayout>

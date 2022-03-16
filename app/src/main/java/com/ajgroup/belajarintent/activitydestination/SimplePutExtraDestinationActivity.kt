@@ -1,8 +1,8 @@
-package com.ajgroup.belajarintent
+package com.ajgroup.belajarintent.activitydestination
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ajgroup.belajarintent.databinding.ActivityMainBinding
+import com.ajgroup.belajarintent.MainActivity
 import com.ajgroup.belajarintent.databinding.ActivitySimplePutExtraDestinationBinding
 
 class SimplePutExtraDestinationActivity : AppCompatActivity() {

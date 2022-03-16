@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BelajarIntent">
         <activity
-            android:name=".SimplePutExtraDestinationActivity"
+            android:name=".activitydestination.BundleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activitydestination.SimplePutExtraDestinationActivity"
             android:exported="false" />
         <activity
             android:name=".activitydestination.SecondActivity"
