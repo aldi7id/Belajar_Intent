@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
+    android:padding="8dp"
     >
     <EditText
         android:id="@+id/et_message"
@@ -23,10 +24,15 @@
         android:id="@+id/btn_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="IMPLICIT INTENT - SEND"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EXPLICIT INTENT"
+        />
 
 </LinearLayout>
