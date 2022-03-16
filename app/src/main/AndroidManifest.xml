@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BelajarIntent">
         <activity
+            android:name=".intent.activitydestination.ParcelableActivity"
+            android:exported="false" />
+        <activity
             android:name=".intent.activitydestination.SerializableActivity"
             android:exported="false" />
         <activity

@@ -4,11 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.ajgroup.belajarintent.intent.activitydestination.BundleActivity
-import com.ajgroup.belajarintent.intent.activitydestination.SecondActivity
-import com.ajgroup.belajarintent.intent.activitydestination.SimplePutExtraDestinationActivity
 import com.ajgroup.belajarintent.databinding.ActivityMainBinding
-import com.ajgroup.belajarintent.intent.activitydestination.SerializableActivity
+import com.ajgroup.belajarintent.intent.activitydestination.*
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -16,7 +13,9 @@ class MainActivity : AppCompatActivity() {
         const val AGE = "AGE"
         const val BUNDLE = "BUNGKUSAN"
         const val OBJECT_SERIALIZABLE = "OBJEK SERIALIZABLE"
+        const val OBJECT_PARCELABLE = "OBJECT PARCELABLE"
     }
+
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,28 +25,29 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.btnSend.setOnClickListener {
-            val sendIntent = Intent().apply{
+            val sendIntent = Intent().apply {
                 action = Intent.ACTION_SEND
                 putExtra(Intent.EXTRA_TEXT, binding.etMessage.text.toString())
                 type = "text/plain"
             }
-            if(sendIntent.resolveActivity(packageManager) != null ){
+            if (sendIntent.resolveActivity(packageManager) != null) {
                 startActivity(sendIntent)
             }
         }
         binding.btnSimpleIntent.setOnClickListener {
-            val intentToSecondActivity = Intent (this, SecondActivity::class.java)
+            val intentToSecondActivity = Intent(this, SecondActivity::class.java)
             startActivity(intentToSecondActivity)
         }
         binding.btnSimplePutExtra.setOnClickListener {
             val message = binding.etMessage.text.toString()
             val age = binding.etAge.text.toString().toInt()
 
-            val simpleIntentExample = Intent (this, SimplePutExtraDestinationActivity::class.java).apply {
-                putExtra(MESSAGE, message)
-                putExtra(AGE, age)
+            val simpleIntentExample =
+                Intent(this, SimplePutExtraDestinationActivity::class.java).apply {
+                    putExtra(MESSAGE, message)
+                    putExtra(AGE, age)
 
-            }
+                }
             startActivity(simpleIntentExample)
         }
         binding.btnPutExtraBundle.setOnClickListener {
@@ -66,12 +66,12 @@ class MainActivity : AppCompatActivity() {
             val intentBundle = Intent(this, BundleActivity::class.java).apply {
                 putExtra(BUNDLE, bundleSaya)
             }
-        startActivity(intentBundle)
+            startActivity(intentBundle)
 
         }
 
         binding.btnPutExtraserializable.setOnClickListener {
-            if(binding.etMhsAge.text.isNotEmpty()){
+            if (binding.etMhsAge.text.isNotEmpty()) {
                 val studentAndroid = StudentSerializable(
                     binding.etMhsName.text.toString(),
                     binding.etMhsAge.text.toString().toInt(),
@@ -87,6 +87,22 @@ class MainActivity : AppCompatActivity() {
             }
 
 
+        }
+        binding.btnPutParcelable.setOnClickListener {
+            if (binding.etAnmLegs.text.isNotEmpty()) {
+                val animal = AnimalParcelable(
+                    binding.etAnmName.text.toString(),
+                    binding.etAnmColor.text.toString(),
+                    binding.etAnmLegs.text.toString().toInt(),
+                    binding.etAnmEnv.text.toString()
+                )
+                val intentParcelable = Intent(this, ParcelableActivity::class.java).apply {
+                    putExtra(OBJECT_PARCELABLE, animal)
+                }
+                startActivity(intentParcelable)
+            } else {
+                Toast.makeText(this, "HARAP DI ISI KAKI", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
