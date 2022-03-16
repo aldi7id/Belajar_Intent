@@ -19,8 +19,10 @@
         app:layout_constraintTop_toTopOf="parent"
         />
     <EditText
+        android:id="@+id/et_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="number"
         android:hint="Masukkan umur anda"/>
 
     <Button

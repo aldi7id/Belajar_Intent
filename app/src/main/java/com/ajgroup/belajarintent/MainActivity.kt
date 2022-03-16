@@ -7,11 +7,16 @@ import com.ajgroup.belajarintent.activitydestination.SecondActivity
 import com.ajgroup.belajarintent.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        const val MESSAGE = "MESSAGE"
+        const val AGE = "AGE"
+    }
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
 
         binding.btnSend.setOnClickListener {
@@ -28,6 +33,16 @@ class MainActivity : AppCompatActivity() {
             val intentToSecondActivity = Intent (this, SecondActivity::class.java)
             startActivity(intentToSecondActivity)
         }
+        binding.btnSimplePutExtra.setOnClickListener {
+            val message = binding.etMessage.text.toString()
+            val age = binding.etAge.text.toString().toInt()
 
+            val simpleIntentExample = Intent (this, SimplePutExtraDestinationActivity::class.java).apply {
+                putExtra(MESSAGE, message)
+                putExtra(AGE, age)
+
+            }
+            startActivity(simpleIntentExample)
+        }
     }
 }
