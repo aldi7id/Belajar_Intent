@@ -1,7 +1,8 @@
-package com.ajgroup.belajarintent
+package com.ajgroup.belajarintent.activitydestination
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ajgroup.belajarintent.R
 
 class SecondActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

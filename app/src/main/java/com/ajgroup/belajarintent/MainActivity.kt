@@ -3,6 +3,7 @@ package com.ajgroup.belajarintent
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ajgroup.belajarintent.activitydestination.SecondActivity
 import com.ajgroup.belajarintent.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
